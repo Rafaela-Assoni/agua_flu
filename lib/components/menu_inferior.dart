@@ -31,7 +31,12 @@ class MenuInferior extends StatelessWidget {
                 padding: EdgeInsets.only(right: 30.0, left: 30.0),
                 color: Colors.blue,
                 icon: Icon(Icons.person),
-                onPressed: () {/* */}
+                onPressed: () {
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Minhaconta())
+                  );
+                }
             ),
 
             IconButton(
