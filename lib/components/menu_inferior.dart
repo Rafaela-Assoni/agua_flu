@@ -40,6 +40,13 @@ class MenuInferior extends StatelessWidget {
                 icon: Icon(Icons.event),
                 onPressed: () {/* */}
             ),
+            IconButton(
+                padding: EdgeInsets.only(right: 30.0, left: 30.0),
+                color: Colors.blue,
+                icon: Icon(Icons.settings),
+                onPressed: () {
+                  /* */
+                }
           ],
         ),
       ),
