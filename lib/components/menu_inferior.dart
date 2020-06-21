@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:controleanimal2/pages/configuracao.dart'
 
 
 class MenuInferior extends StatelessWidget {
@@ -45,7 +46,10 @@ class MenuInferior extends StatelessWidget {
                 color: Colors.blue,
                 icon: Icon(Icons.settings),
                 onPressed: () {
-                  /* */
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Config())
+                  );
                 }
           ],
         ),
