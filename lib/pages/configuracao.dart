@@ -1,7 +1,9 @@
-import 'package:controle_animal/components/menu_inferior.dart';
+import 'package:controleanimal2/pages/nova_pessoa.dart';
+import 'package:controleanimal2/model/Pessoa.dart';
 import 'package:flutter/material.dart';
-import 'package:controle_animal/model/Animal.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:controleanimal2/components/menu_inferior.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Config extends StatefulWidget {
   @override
