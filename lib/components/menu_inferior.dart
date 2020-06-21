@@ -14,14 +14,14 @@ class MenuInferior extends StatelessWidget {
 
           children: <Widget>[
             IconButton(
-                padding: EdgeInsets.only(right: 20.0, left: 20.0),
+                padding: EdgeInsets.only(right: 30.0, left: 30.0),
                 color: Colors.blue,
                 icon: Icon(Icons.home),
                 onPressed: () {/* */}
             ),
 
             IconButton(
-                padding: EdgeInsets.only(right: 50.0, left: 50.0),
+                padding: EdgeInsets.only(right: 30.0, left: 30.0),
                 color: Colors.blue,
                 icon: Icon(Icons.local_drink),
                 onPressed: () {/* */}
@@ -35,7 +35,7 @@ class MenuInferior extends StatelessWidget {
             ),
 
             IconButton(
-                padding: EdgeInsets.only(right: 20.0, left: 20.0),
+                padding: EdgeInsets.only(right: 30.0, left: 30.0),
                 color: Colors.blue,
                 icon: Icon(Icons.event),
                 onPressed: () {/* */}
