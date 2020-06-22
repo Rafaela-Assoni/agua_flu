@@ -50,7 +50,10 @@ class MenuInferior extends StatelessWidget {
                 color: Colors.blue,
                 icon: Icon(Icons.settings),
                 onPressed: () {
-                  /* */
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Config())
+                  );
                 }
               )
           ],
