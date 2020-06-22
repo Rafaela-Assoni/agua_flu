@@ -13,17 +13,22 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Firestore db = Firestore.instance;
-  String user;
+    String _userID = "";
 
-  String _getUser() {
-    FirebaseAuth.instance.currentUser().then((currentUser) =>
-    {
-      if(currentUser != "") {
-        user = currentUser.uid,
-      }
+  Future _getUser() async{
+    print("START INIT STATE");
+    FirebaseUser currentUser = await FirebaseAuth.instance.currentUser();
+    setState(() {
+      _userID = currentUser.uid;
     });
-    print("USER:: "+user);
-    return user;
+    print("USER::"+_userID);
+
+  }
+  
+    @override
+  void initState() {
+    _getUser();
+    super.initState();
   }
 
   @override
@@ -33,7 +38,7 @@ class _HomeState extends State<Home> {
         title: Text("Meus Amigos"),
       ),
 
-      body: _body(),
+      body: _loadBody(),
 
       bottomNavigationBar: MenuInferior(),
 
@@ -51,9 +56,22 @@ class _HomeState extends State<Home> {
     );
   }
 
+_loadBody(){
+    return _userID == ""
+        ? Center(
+            child: Column(
+              children: <Widget>[
+              Text("Carregando amigos..."),
+              CircularProgressIndicator()
+             ],
+        ),
+      )
+    : _body();
+  }
+
 _body() {
     return StreamBuilder(
-        stream: db.collection(_getUser()).document("pessoas").collection("pessoas").snapshots(),
+        stream: db.collection(_userID()).document("pessoas").collection("pessoas").snapshots(),
 // ignore: missing_return
         builder: (context, snapshot) {
           switch( snapshot.connectionState ) {
