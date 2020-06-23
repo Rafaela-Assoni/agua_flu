@@ -24,19 +24,19 @@ class MenuInferior extends StatelessWidget {
                 padding: EdgeInsets.only(right: 50.0, left: 40.0),
                 color: Colors.blue,
                 icon: Icon(Icons.local_drink),
-                onPressed: () {/* */}
+                onPressed: () {
+                       Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Minhaconta())
+                  );
+                }
             ),
 
             IconButton(
                 padding: EdgeInsets.only(right: 30.0, left: 10.0),
                 color: Colors.blue,
                 icon: Icon(Icons.person),
-                onPressed: () {
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Minhaconta())
-                  );
-                }
+                onPressed: () {/* */}
             ),
 
             IconButton(
